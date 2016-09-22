@@ -16,21 +16,16 @@ public class Application {
     public void start() {
         populateAppleList();
 
-        ApplePrinter weightPrinter = apple -> logger.log(Level.INFO, "Weight of apple :" + apple.getWeight());
-        ApplePrinter colorPrinter = apple -> logger.log(Level.INFO, "Color of apple :" + apple.getColor());
-        ApplePrinter categoryPrinter = apple -> {
+        prettyPrintApple(apples, apple -> logger.log(Level.INFO, "Weight of apple :" + apple.getWeight()));
+        prettyPrintApple(apples, apple -> logger.log(Level.INFO, "Weight of apple :" + apple.getWeight()));
+        prettyPrintApple(apples, apple -> {
             String category = apple.getWeight() > 150 ? "Heavy" : "Light";
             logger.log(Level.INFO, "Category of apple : " + category);
-        };
-
-        prettyPrintApple(apples, weightPrinter);
-        prettyPrintApple(apples, colorPrinter);
-        prettyPrintApple(apples, categoryPrinter);
+        });
     }
 
     private void prettyPrintApple(List<Apple> apples, ApplePrinter applePrinter) {
-//        apples.forEach(apple -> applePrinter.toCustomizedString(apple));  //Alternative
-        apples.stream().forEach(apple -> applePrinter.toCustomizedString(apple));
+        apples.stream().forEachOrdered(apple -> applePrinter.toCustomizedString(apple));
     }
 
     private void populateAppleList() {
