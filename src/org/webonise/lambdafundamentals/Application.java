@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 public class Application {
     private final List<Apple> apples;
     private static final Logger logger = Logger.getLogger(Application.class.getName());
+    private static final int CATEGORY_WEIGHT_LIMIT = 150;
 
     public Application() {
         this.apples = new ArrayList<>();
@@ -19,7 +20,7 @@ public class Application {
         prettyPrintApple(apples, apple -> logger.log(Level.INFO, "Weight of apple :" + apple.getWeight()));
         prettyPrintApple(apples, apple -> logger.log(Level.INFO, "Color of apple :" + apple.getColor()));
         prettyPrintApple(apples, apple -> {
-            String category = apple.getWeight() > 150 ? "Heavy" : "Light";
+            String category = apple.getWeight() > CATEGORY_WEIGHT_LIMIT ? "Heavy" : "Light";
             logger.log(Level.INFO, "Category of apple : " + category);
         });
     }
