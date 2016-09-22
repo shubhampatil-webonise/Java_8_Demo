@@ -17,7 +17,7 @@ public class Application {
         populateAppleList();
 
         prettyPrintApple(apples, apple -> logger.log(Level.INFO, "Weight of apple :" + apple.getWeight()));
-        prettyPrintApple(apples, apple -> logger.log(Level.INFO, "Weight of apple :" + apple.getWeight()));
+        prettyPrintApple(apples, apple -> logger.log(Level.INFO, "Color of apple :" + apple.getColor()));
         prettyPrintApple(apples, apple -> {
             String category = apple.getWeight() > 150 ? "Heavy" : "Light";
             logger.log(Level.INFO, "Category of apple : " + category);
