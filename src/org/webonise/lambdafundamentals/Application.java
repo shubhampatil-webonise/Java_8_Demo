@@ -28,7 +28,7 @@ public class Application {
     }
 
     private void prettyPrintApple(List<Apple> apples, ApplePrinter applePrinter) {
-        apples.stream().forEachOrdered(apple -> applePrinter.toCustomizedString(apple));
+        apples.stream().forEachOrdered(apple -> applePrinter.printApple(apple));
     }
 
     private void populateAppleList() {
