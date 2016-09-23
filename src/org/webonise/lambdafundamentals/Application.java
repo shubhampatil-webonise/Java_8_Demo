@@ -9,6 +9,8 @@ public class Application {
     private final List<Apple> apples;
     private static final Logger logger = Logger.getLogger(Application.class.getName());
     private static final int CATEGORY_WEIGHT_LIMIT = 150;
+    private static final String RED = "red";
+    private static final String GREEN = "green";
 
     public Application() {
         this.apples = new ArrayList<>();
@@ -30,10 +32,10 @@ public class Application {
     }
 
     private void populateAppleList() {
-        apples.add(new Apple(150, "green"));
-        apples.add(new Apple(200, "red"));
-        apples.add(new Apple(120, "red"));
-        apples.add(new Apple(170, "green"));
-        apples.add(new Apple(100, "green"));
+        apples.add(new Apple(150, GREEN));
+        apples.add(new Apple(200, RED));
+        apples.add(new Apple(120, RED));
+        apples.add(new Apple(170, GREEN));
+        apples.add(new Apple(100, GREEN));
     }
 }
